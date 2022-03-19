@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/compat/app";
+import {useHistory} from "react-router-dom";
 const firebaseConfig = {
   apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
   authDomain: "vyocolumbus-24979.firebaseapp.com",
@@ -9,9 +10,21 @@ const firebaseConfig = {
   messagingSenderId: "798982643669",
   appId: "1:798982643669:web:75c337f1eda20ab985275c"
 };
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 function App() {
+  let history = useHistory();
+
+  const signOut = () => {
+    firebase.auth().signOut().then(function() {
+      console.log("Successful sign-out")
+      history.push("/n")
+    }).catch(function(error) {
+      console.log("Failed to sign-out.")
+      console.log(error)
+    });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
