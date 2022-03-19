@@ -9,7 +9,8 @@ const firebaseConfig = {
   messagingSenderId: "798982643669",
   appId: "1:798982643669:web:75c337f1eda20ab985275c"
 };
-firebase.initializeApp(firebaseConfig);
+
+!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app() // if already initialized, use that one
 
 const uiConfig = {
   // Popup signin flow rather than redirect flow.

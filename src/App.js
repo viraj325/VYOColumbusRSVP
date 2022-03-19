@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import firebase from "firebase/compat/app";
 import {useHistory} from "react-router-dom";
-import {useEffect} from "react";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import {useEffect, useState} from "react";
 const firebaseConfig = {
   apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
   authDomain: "vyocolumbus-24979.firebaseapp.com",
@@ -14,6 +16,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function App() {
+  const [value, onChange] = useState(new Date());
   let history = useHistory();
 
   useEffect(() => {
@@ -32,15 +35,21 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Edit <code>src/App.js</code> and save to reload.</p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Calendar onChange={onChange} value={value} />
     </div>
   );
 }
+
+/*
+hierarchy
+Subtitle: Number
+Title: VYO Columbus
+Subtitle: address
+Calendar
+  ->Events on selected date(Chips)
+Donation
+Up Next
+Logout
+ */
 
 export default App;
