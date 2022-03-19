@@ -34,8 +34,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Calendar onChange={onChange} value={value} />
+    <div>
+      <h1 className="titleBanner">VYO Columbus</h1>
+      <Calendar className="calendarCustom" onChange={onChange} value={value} />
     </div>
   );
 }
