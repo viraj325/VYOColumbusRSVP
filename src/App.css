@@ -1,25 +1,25 @@
 body {
-  background-color: #fd7e14;
+  background-color: #ffffff;
+}
+
+.helloText {
+  color: rgb(75, 75, 75);
+  font-family: "Varela Round", sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  font-style: normal;
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .titleBanner {
-  color: rgb(255, 255, 255);
-  display: block;
-  font-family: "Google Sans", sans-serif;
-  font-size: 52px;
-  font-stretch: normal;
+  color: rgb(131, 131, 131);
+  font-family: "Varela Round", sans-serif;
+  font-size: 35px;
+  font-weight: bolder;
   font-style: normal;
-  font-variant-caps: normal;
-  font-weight: 500;
-  height: 120px;
-  letter-spacing: normal;
-  line-height: 60px;
-  margin-block-end: 24px;
-  margin-block-start: 24px;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
-  margin: 24px 0;
-  max-width: 1000px;
+  margin-left: 25px;
 }
 
 .calendarCustom {

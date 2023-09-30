@@ -33,7 +33,8 @@ function App() {
 
   return (
     <div>
-      <h1 className="titleBanner">VYO Columbus</h1>
+      <div className="helloText">Hello Viraj!</div>
+      <div className="titleBanner">Upcoming Events</div>
     </div>
   );
 }
