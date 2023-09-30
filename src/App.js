@@ -1,19 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import firebase from "firebase/compat/app";
 import {useHistory} from "react-router-dom";
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {useEffect, useState} from "react";
-const firebaseConfig = {
+
+firebase.initializeApp({
   apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
   authDomain: "vyocolumbus-24979.firebaseapp.com",
   projectId: "vyocolumbus-24979",
   //storageBucket: "vyocolumbus-24979.appspot.com",
   messagingSenderId: "798982643669",
   appId: "1:798982643669:web:75c337f1eda20ab985275c"
-};
-firebase.initializeApp(firebaseConfig);
+})
 
 function App() {
   const [value, onChange] = useState(new Date());
@@ -36,7 +34,6 @@ function App() {
   return (
     <div>
       <h1 className="titleBanner">VYO Columbus</h1>
-      <Calendar className="calendarCustom" onChange={onChange} value={value} />
     </div>
   );
 }
