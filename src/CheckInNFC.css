@@ -1,0 +1,29 @@
+.check-in-text {
+    color: rgb(75, 75, 75);
+    font-family: "Varela Round", sans-serif;
+    font-size: 55px;
+    font-weight: bolder;
+    font-style: normal;
+    margin: 10px;
+    text-align: center;
+}
+
+.center-container-checkin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.center-button-checkin {
+    font-family: "Varela Round", sans-serif;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    width: 175px;
+    height: 45px;
+    border-radius: 10px;
+    color: #8f5629;
+    background-color: antiquewhite;
+}

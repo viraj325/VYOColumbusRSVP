@@ -3,10 +3,11 @@ import {render} from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, useParams} from "react-router-dom";
 import Sign from "./Sign";
 import Start from "./Start";
 import QRCodeGenerator from "./QRCodeGenerator";
+import CheckInNFC from "./CheckInNFC";
 
 function Launch() {
     return (
@@ -14,6 +15,7 @@ function Launch() {
             <Switch>
                 <Route path={"/a"} component={App}/>
                 <Route path={"/n"} component={Sign}/>
+                <Route path={"/c/:event"} component={CheckInNFC}/>
                 <Route path={"/qr"} component={QRCodeGenerator}/>
                 <Route path={"/"} component={Start}/>
             </Switch>

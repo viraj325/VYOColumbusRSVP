@@ -3,19 +3,20 @@ import { useHistory } from "react-router-dom";
 import firebase from "firebase/compat/app";
 
 function Start() {
-    let history = useHistory();
+    let history = useHistory()
+
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 //signed in
                 console.log("Already Signed")
-                history.push("/a");
+                history.push("/a")
             } else {
                 // No user is signed in.
                 console.log("Login/Register")
-                history.push("/n");
+                history.push("/n")
             }
-        });
+        })
         /*if (localStorage.getItem("isSignedIn") === null)
             history.push("/n");
         else
