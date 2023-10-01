@@ -1,3 +1,8 @@
+import {
+  BrowserRouter,
+  Routes, //replaces "Switch" used till v5
+  Route,
+} from "react-router-dom";
 import './App.css';
 import firebase from "firebase/compat/app";
 import {useHistory} from "react-router-dom";
