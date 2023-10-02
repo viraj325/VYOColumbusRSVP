@@ -1,30 +1,21 @@
-import {
-  BrowserRouter,
-  Routes, //replaces "Switch" used till v5
-  Route,
-} from "react-router-dom";
 import './App.css';
 import firebase from "firebase/compat/app";
 import {useHistory} from "react-router-dom";
 import 'react-calendar/dist/Calendar.css';
 import {useEffect, useState} from "react";
 
-firebase.initializeApp({
-  apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
-  authDomain: "vyocolumbus-24979.firebaseapp.com",
-  projectId: "vyocolumbus-24979",
-  //storageBucket: "vyocolumbus-24979.appspot.com",
-  messagingSenderId: "798982643669",
-  appId: "1:798982643669:web:75c337f1eda20ab985275c"
-})
-
 function App() {
-  const [value, onChange] = useState(new Date());
+  const [value, onChange] = useState(new Date())
+  const [events, setEvents] = useState([])
   let history = useHistory();
 
   useEffect(() => {
     // do something
   })
+
+  function getEvents() {
+
+  }
 
   const signOut = () => {
     firebase.auth().signOut().then(function() {
@@ -40,6 +31,18 @@ function App() {
     <div>
       <div className="helloText">Hello Viraj!</div>
       <div className="titleBanner">Upcoming Events</div>
+      {
+        events.length === 0 ?
+            <div></div> : null
+      }
+      {
+        events.map(() => {
+          // do something
+        })
+      }
+      <div className="center-container">
+        <button className="center-button" onClick={signOut}>Logout</button>
+      </div>
     </div>
   );
 }
