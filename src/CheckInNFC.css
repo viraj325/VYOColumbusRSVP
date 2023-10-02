@@ -8,14 +8,14 @@
     text-align: center;
 }
 
-.center-container-checkin {
+.center-container-check-in {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 45px;
 }
 
-.center-button-checkin {
+.center-button-check-in {
     font-family: "Varela Round", sans-serif;
     font-weight: bolder;
     font-size: 18px;
