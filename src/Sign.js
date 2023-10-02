@@ -1,5 +1,5 @@
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-import firebase from 'firebase/compat/app'
+import firebase from "firebase/compat/app"
 
 const firebaseConfig = {
   apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
@@ -20,8 +20,8 @@ const uiConfig = {
     // We will display Google and Facebook as auth providers.
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        // firebase.auth.FacebookAuthProvider.PROVIDER_ID
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID
     ]
 }
 
