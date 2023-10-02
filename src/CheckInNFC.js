@@ -1,7 +1,11 @@
-import './CheckInNFC.css';
-import {useHistory, useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import Airtable from "airtable";
+import './CheckInNFC.css'
+import {useHistory, useParams} from "react-router-dom"
+import {useEffect, useState} from "react"
+import { getAuth } from "firebase/auth"
+import Airtable from "airtable"
+
+const auth = getAuth()
+const user = auth.currentUser
 
 /*Airtable.configure({
     apiKey: 'patwtNubE5CWiLYdy.07c5751cef17d84a634d736cbc6b7da70ec462cbc9f58a64c033f32559e3edb1'
@@ -13,21 +17,37 @@ const base = new Airtable({
 
 function CheckInNFC() {
     const [checkedIn, setCheckedIn] = useState(false)
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [uid, setUID] = useState("")
     let history = useHistory()
     let { event } = useParams()
 
     useEffect(() => {
         // do something
         console.log(event)
-        setCheckedIn(true)
-        checkInToAirTable()
+        if (user !== null) {
+            const displayName = user.displayName
+            setName(displayName)
+
+            const email = user.email
+            setEmail(email)
+
+            const uid = user.uid
+            setUID(uid)
+
+            setCheckedIn(true)
+            checkInToAirTable()
+        } else {
+            console.log("User is not logged in, please sign in and try again!")
+        }
     })
 
     function checkInToAirTable() {
         base('Event').create([
             {
                 "fields": {
-                    "Name": "Viraj"
+                    "Name": name
                 }
             }], function (err, records) {
             if (err) {
