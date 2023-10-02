@@ -33,7 +33,9 @@ function App() {
       <div className="titleBanner">Upcoming Events</div>
       {
         events.length === 0 ?
-            <div></div> : null
+            <div className="no-upcoming-events-div">
+              There are currently no other upcoming events.
+            </div> : null
       }
       {
         events.map(() => {

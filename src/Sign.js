@@ -1,6 +1,6 @@
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from 'firebase/compat/app';
-var firebaseui = require('firebaseui');
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import firebase from 'firebase/compat/app'
+
 const firebaseConfig = {
   apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
   authDomain: "vyocolumbus-24979.firebaseapp.com",
@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "vyocolumbus-24979.appspot.com",
   messagingSenderId: "798982643669",
   appId: "1:798982643669:web:75c337f1eda20ab985275c"
-};
+}
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app() // if already initialized, use that one
 
@@ -21,18 +21,20 @@ const uiConfig = {
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        // firebase.auth.FacebookAuthProvider.PROVIDER_ID
     ]
-};
+}
 
 function Sign() {
-  return (
-    <div>
-      <h1>My App</h1>
-      <p>Please sign-in:</p>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-    </div>
-  );
+    return (
+        <div>
+            <div className="helloText">Welcome!</div>
+            <div className="titleBanner">Please login to continue...</div>
+            <div style={{marginTop: "65px"}}>
+                <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
+            </div>
+        </div>
+    )
 }
 
 export default Sign;
