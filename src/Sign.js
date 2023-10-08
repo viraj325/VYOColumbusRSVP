@@ -1,13 +1,14 @@
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from "firebase/compat/app"
+require('firebaseui') // This is necessary for the UI do not delete for the foreseeable future
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
-  authDomain: "vyocolumbus-24979.firebaseapp.com",
-  projectId: "vyocolumbus-24979",
-  storageBucket: "vyocolumbus-24979.appspot.com",
-  messagingSenderId: "798982643669",
-  appId: "1:798982643669:web:75c337f1eda20ab985275c"
+    apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
+    authDomain: "vyocolumbus-24979.firebaseapp.com",
+    projectId: "vyocolumbus-24979",
+    storageBucket: "vyocolumbus-24979.appspot.com",
+    messagingSenderId: "798982643669",
+    appId: "1:798982643669:web:75c337f1eda20ab985275c"
 }
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app() // if already initialized, use that one
