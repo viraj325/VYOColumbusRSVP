@@ -55,4 +55,11 @@ body {
   border-radius: 10px;
   color: #8f5629;
   background-color: antiquewhite;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.center-button:hover {
+  color: antiquewhite;
+  background-color: #8f5629;
 }

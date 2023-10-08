@@ -30,7 +30,7 @@ function Sign() {
     return (
         <div>
             <div className="helloText">Welcome!</div>
-            <div className="titleBanner">Please login to continue...</div>
+            <div className="titleBanner">Login or create account to continue...</div>
             <div style={{marginTop: "65px"}}>
                 <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
             </div>
@@ -39,3 +39,14 @@ function Sign() {
 }
 
 export default Sign;
+
+/*
+<div style={{
+                fontFamily: "Varela Round",
+                fontWeight: "lighter",
+                fontSize: "14px",
+                marginTop: "5%",
+                textAlign: "center",
+                cursor: "pointer"
+            }} onClick={navigateToSignUp}>Don't have an account, <span style={{color: "blue"}}>click here</span> to create one!</div>
+ */
