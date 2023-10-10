@@ -2,25 +2,18 @@ import {useEffect, useState} from "react"
 import {useHistory} from "react-router-dom"
 
 export default function AdminStatus() {
-    const [url, setURL] = useState("")
     let history = useHistory()
 
-    useEffect(() => {
-
-    }, [url])
-
-    const cancelAction = () => {
-        history.push("/a");
-    }
+    useEffect(() => {}, [])
 
     return (
         <div>
-            <div className="helloText">Hello Viraj!</div>
-            <div className="titleBanner">Upcoming Events</div>
+            <div className="helloText">Admin Page</div>
+            <div className="titleBanner">List of people who attended...</div>
             <div className="center-container">
                 <button className="center-button" onClick={() => {
-                    history.push('')
-                }}>Done</button>
+                    history.push('/a')
+                }}>Home</button>
             </div>
         </div>
     )
