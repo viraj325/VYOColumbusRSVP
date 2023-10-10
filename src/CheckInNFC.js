@@ -13,7 +13,7 @@ const user = auth.currentUser
 
 const base = new Airtable({
     apiKey: 'patwtNubE5CWiLYdy.07c5751cef17d84a634d736cbc6b7da70ec462cbc9f58a64c033f32559e3edb1'
-}).base('appOSKlJfDtxoZS7o');
+}).base('appOSKlJfDtxoZS7o')
 
 function CheckInNFC() {
     const [checkedIn, setCheckedIn] = useState(false)
@@ -41,13 +41,15 @@ function CheckInNFC() {
         } else {
             console.log("User is not logged in, please sign in and try again!")
         }
-    })
+    }, [])
 
     function checkInToAirTable() {
         base('Event').create([
             {
                 "fields": {
-                    "Name": name
+                    "Name": name,
+                    "Email": email,
+                    "UID": uid
                 }
             }], function (err, records) {
             if (err) {
@@ -57,11 +59,11 @@ function CheckInNFC() {
             records.forEach(function (record) {
                 console.log(record.getId());
             });
-        })
+        }).then(r => console.log(r))
     }
 
     const cancelAction = () => {
-        history.push("/a");
+        history.push("/a")
     }
 
     return (

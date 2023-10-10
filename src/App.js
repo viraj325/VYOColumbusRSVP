@@ -1,13 +1,13 @@
-import './App.css';
-import firebase from "firebase/compat/app";
-import {useHistory} from "react-router-dom";
-import 'react-calendar/dist/Calendar.css';
-import {useEffect, useState} from "react";
+import './App.css'
+import firebase from "firebase/compat/app"
+import {useHistory} from "react-router-dom"
+import 'react-calendar/dist/Calendar.css'
+import {useEffect, useState} from "react"
 
 function App() {
   const [value, onChange] = useState(new Date())
   const [events, setEvents] = useState([])
-  let history = useHistory();
+  let history = useHistory()
 
   useEffect(() => {
     // do something

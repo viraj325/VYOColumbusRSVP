@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import { useHistory } from "react-router-dom";
-import firebase from "firebase/compat/app";
+import React, {useEffect} from 'react'
+import { useHistory } from "react-router-dom"
+import firebase from "firebase/compat/app"
 
 function Start() {
     let history = useHistory()
@@ -24,7 +24,7 @@ function Start() {
                 history.push("/a");
             else
                 history.push("/n");*/
-    }, [history]);
+    }, [history])
     return(<div/>)
 }
-export default Start;
+export default Start

@@ -5,6 +5,7 @@ require('firebaseui') // This is necessary for the UI do not delete for the fore
 const firebaseConfig = {
     apiKey: "AIzaSyCpEJlLKZqD3oyL45Vwqa6LVsnQ1goqT6w",
     authDomain: "vyocolumbus-24979.firebaseapp.com",
+    databaseURL: "https://vyocolumbus-24979-default-rtdb.firebaseio.com",
     projectId: "vyocolumbus-24979",
     storageBucket: "vyocolumbus-24979.appspot.com",
     messagingSenderId: "798982643669",

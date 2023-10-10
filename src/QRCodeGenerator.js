@@ -1,18 +1,19 @@
-import './App.css';
-import {useHistory} from "react-router-dom";
-import {useEffect, useState} from "react";
-import QRCode from "react-qr-code";
+import './App.css'
+import {useHistory} from "react-router-dom"
+import {useEffect, useState} from "react"
+import QRCode from "react-qr-code"
 
 function QRCodeGenerator() {
-    const [value, onChange] = useState(new Date())
+    let BASE_URL = 'update'
+    const [url, setURL] = useState("")
     let history = useHistory()
 
     useEffect(() => {
-        // do something
-    })
+        setURL(BASE_URL + "")
+    }, [url])
 
     const cancelAction = () => {
-        history.push("/a");
+        history.push("/a")
     }
 
     return (
@@ -21,7 +22,7 @@ function QRCodeGenerator() {
                 <QRCode
                     size={256}
                     style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                    value={value}
+                    value={url}
                     viewBox={`0 0 256 256`}
                 />
             </div>
@@ -33,4 +34,4 @@ function QRCodeGenerator() {
     )
 }
 
-export default QRCodeGenerator;
+export default QRCodeGenerator
