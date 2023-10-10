@@ -7,13 +7,7 @@ export default function AdminQRReader() {
     const [uid, setUID] = useState("")
     let history = useHistory()
 
-    useEffect(() => {
-
-    }, [url])
-
-    const cancelAction = () => {
-        history.push("/a");
-    }
+    useEffect(() => {}, [])
 
     return (
         <div>
