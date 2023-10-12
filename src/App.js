@@ -3,6 +3,12 @@ import firebase from "firebase/compat/app"
 import {useHistory} from "react-router-dom"
 import 'react-calendar/dist/Calendar.css'
 import {useEffect, useState} from "react"
+import { getApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+const app = getApp()
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app)
 
 function App() {
   const [value, onChange] = useState(new Date())
@@ -13,8 +19,11 @@ function App() {
     // do something
   })
 
-  function getEvents() {
+  const checkIfUserIsAdmin = () => {
+
   }
+
+  function getEvents() {}
 
   const signOut = () => {
     firebase.auth().signOut().then(function() {
